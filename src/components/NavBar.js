@@ -1,5 +1,6 @@
 import logo from '../images/logo.svg'
-import { navLinks } from './data'
+import { navLinks, socialLinks } from './data'
+
 const NavBar = () => {
   return (
     <nav className="navbar">
@@ -25,36 +26,20 @@ const NavBar = () => {
         </ul>
 
         <ul className="nav-icons">
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="nav-icon"
-            >
-              <i className="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="nav-icon"
-            >
-              <i className="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="nav-icon"
-            >
-              <i className="fab fa-squarespace"></i>
-            </a>
-          </li>
+          {socialLinks.map((social) => {
+            return (
+              <li key={social.id}>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="nav-icon"
+                >
+                  <i className={social.icon}></i>
+                </a>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </nav>
