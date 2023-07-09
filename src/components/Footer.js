@@ -1,20 +1,11 @@
 import React from 'react'
-import { navLinks, socialLinks } from './data'
+import { socialLinks } from './data'
+import PageLinks from './PageLinks'
 
 function Footer() {
   return (
     <footer className="section footer">
-      <ul className="footer-links">
-        {navLinks.map((link) => {
-          return (
-            <li key={link.id}>
-              <a href={link.href} className="footer-link">
-                {link.title}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
+      <PageLinks parentClass="footer-links" childClass="footer-link" />
       <ul className="footer-icons">
         {socialLinks.map((link) => {
           return (
